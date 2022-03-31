@@ -18,6 +18,9 @@ north = 90
 west = 180
 south = 270
 
+# Angle at which the tree splits
+angle = 15 
+
 my_screen = turtle.Screen()
 my_screen.screensize(canv_length, canv_length, '#2d2d2d')
 
@@ -48,11 +51,11 @@ def drawTree(n, length):
         my_turtle.pendown()
     else:
         my_turtle.forward(length)
-        my_turtle.left(15)
+        my_turtle.left(angle)
         drawTree(n - 1, ratio * length)
-        my_turtle.right(30)
+        my_turtle.right(2 * angle)
         drawTree(n - 1, ratio * length)
-        my_turtle.left(15)
+        my_turtle.left(angle)
         my_turtle.penup()
         my_turtle.backward(length)
         my_turtle.pendown()
