@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 import turtle
 
 # How many recursions you want the tree to have
@@ -61,4 +62,5 @@ def drawTree(n, length):
         my_turtle.pendown()
 
 drawTree(tree_depth, trunk_length)
+print('Done!')
 turtle.done()
