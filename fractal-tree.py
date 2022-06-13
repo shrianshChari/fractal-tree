@@ -44,14 +44,19 @@ elif (my_turtle.heading() == south):
     my_turtle.sety(canv_length / 2)
 my_turtle.pendown()
 
+len_drawn = 0
+
 def drawTree(n, length):
+    global len_drawn
     if (n == 1):
         my_turtle.forward(length)
+        len_drawn += length
         my_turtle.penup()
         my_turtle.backward(length)
         my_turtle.pendown()
     else:
         my_turtle.forward(length)
+        len_drawn += length
         my_turtle.left(angle)
         drawTree(n - 1, ratio * length)
         my_turtle.right(2 * angle)
@@ -62,5 +67,6 @@ def drawTree(n, length):
         my_turtle.pendown()
 
 drawTree(tree_depth, trunk_length)
+print(f'In all, we have drawn tree lines of total length {round(len_drawn, 2)}')
 print('Done!')
 turtle.done()
