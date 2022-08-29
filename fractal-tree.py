@@ -29,6 +29,7 @@ my_turtle = turtle.Turtle()
 my_turtle.pencolor('white')
 my_turtle.width(3)
 my_turtle.hideturtle()
+my_turtle.speed('fastest')
 
 # Set the direction you want to grow the tree
 my_turtle.setheading(north)
